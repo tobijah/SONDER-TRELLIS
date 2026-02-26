@@ -1,0 +1,81 @@
+// Small devices (landscape phones, 576px and up)
+@mixin phones {
+    @media only screen and (min-width: $screen-sm-min) {
+        @content;
+    }
+}
+
+// Small devices (landscape phones, 576px and down)
+@mixin phones-down {
+    @media only screen and (max-width: $screen-sm-max) {
+        @content;
+    }
+}
+
+// Phones only
+@mixin phones-only {
+    @media only screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+        @content;
+    }
+}
+
+// Medium devices (tablets, 768px and up)
+@mixin tablets {
+    @media only screen and (min-width: $screen-md-min) {
+        @content;
+    }
+}
+
+// Medium devices (tablets, 768px and down)
+@mixin tablets-down {
+    @media only screen and (max-width: $screen-md-min) {
+        @content;
+    }
+}
+
+// Tablets only
+@mixin tablets-only {
+    @media screen and (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+        @content;
+    }
+}
+
+// Large devices (desktops, 992px and up)
+@mixin desktop {
+    @media only screen and (min-width: $screen-lg-min) {
+        @content;
+    }
+}
+
+// Extra large devices (large desktops, 1800px and down)
+@mixin large-desktop-down {
+    @media only screen and (max-width: $screen-xxl-min) {
+        @content;
+    }
+}
+
+// Mobile nav breakpoint
+@mixin breakpoint-nav {
+    @media only screen and (max-width: $breakpoint-nav) {
+        @content;
+    }
+}
+
+// Custom Mixin for screen size
+@mixin desktop-down {
+    @media only screen and (max-width: $large-screen) {
+        @content;
+    }
+}
+
+@mixin desktop-up {
+    @media only screen and (min-width: $screen-xxl-min) {
+        @content;
+    }
+}
+
+@mixin custom-tablet {
+    @media only screen and (min-width: 767px) and (max-width: 860px) {
+        @content;
+    }
+}

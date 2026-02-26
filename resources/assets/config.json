@@ -1,0 +1,29 @@
+{
+    "entry": {
+        "main": [
+        "./scripts/main.js",
+        "./styles/main.scss"
+        ],
+        "customizer": [
+        "./scripts/customizer.js"
+        ],
+        "home": [
+        "./styles/home.scss"
+        ],
+        "woo": [
+        "./styles/woo.scss"
+        ],
+        "pages": [
+        "./styles/pages.scss"
+        ]
+    },
+    "publicPath": "/app/themes/cultiv",
+    "devUrl": "https://sondercoffee.test",
+    "proxyUrl": "https://localhost:5000",
+    "cacheBusting": "[name]_[hash:8]",
+    "watch": [
+        "app/**/*.php",
+        "config/**/*.php",
+        "resources/views/**/*.php"
+    ]
+}

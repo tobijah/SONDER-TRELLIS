@@ -1,0 +1,31 @@
+@use "../common/mixins";
+
+.main {
+    .btn,
+    .submit {
+        border-radius: 0.25rem;
+        background-color: #eae7e247;
+        color: #fff;
+        padding: 0.6rem 1rem;
+        border: 0;
+        text-decoration: none;
+        transition: 0.2s all;
+
+        &:hover {
+            opacity: 0.5;
+        }
+
+        &.btn-large {
+            font-size: 1.25em;
+            padding: 0.5rem 1.25rem;
+
+            @include mixins.tablets {
+                padding: 0.85rem 1.25rem 0.9rem;
+            }
+
+            @include mixins.desktop {
+                font-size: 1.5rem;
+            }
+        }
+    }
+}

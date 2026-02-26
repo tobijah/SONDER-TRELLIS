@@ -1,0 +1,60 @@
+body,
+html {
+    margin: 0;
+    background: url("@images/Background.jpg");
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: -2;
+    scroll-behavior: smooth;
+}
+
+.wrapper {
+    margin: 0;
+
+    .hero-background {
+        min-height: 950px;
+        height: 100%;
+
+        @include phones-down {
+            min-height: 850px;
+        }
+
+        .background-overlay {
+            background: url("@images/Herobackground.jpg") no-repeat center center;
+            background-size: cover;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: -1;
+            filter: brightness(25%);
+            min-height: 965px;
+            max-height: 1040px;
+
+            @include phones-down {
+                min-height: 900px;
+            }
+        }
+    }
+}
+
+body {
+    font-size: 19px;
+    font-family: "hero", sans-serif;
+    color: $dark-font;
+}
+
+hr {
+    border-width: 1px;
+    border-color: $brand-primary;
+    margin: 6rem 0;
+}
+
+.main {
+    img {
+        max-width: 100%;
+    }
+}

@@ -1,0 +1,187 @@
+@use "../common/mixins";
+@use "../common/variables";
+
+footer {
+    clear: both;
+    color: variables.$light-font;
+
+    @include mixins.phones-down {
+        padding-top: 3rem;
+        margin-top: 0;
+    }
+
+    .wrapper-footer {
+        display: flex;
+        position: relative;
+
+        .footer-background {
+            background: url("@images/footer-pic.jpg") no-repeat center center;
+            transform: rotate(180deg);
+            background-size: cover;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: -1;
+            filter: brightness(25%);
+        }
+    }
+
+    .copyright-text {
+        padding: 4rem;
+        padding-top: 0;
+        align-self: flex-end;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+
+        @include mixins.phones-down {
+            padding: 0 1rem;
+            flex-direction: column;
+        }
+
+        p {
+            font-family: "hero", Roboto, sans-serif;
+            font-size: 15px;
+            font-weight: 300;
+
+            @include mixins.phones-down {
+                font-size: 14px;
+                margin: 0;
+            }
+        }
+
+        .links {
+            display: flex;
+            flex-direction: row;
+            justify-self: end;
+
+            @include mixins.phones-down {
+                width: 100%;
+                text-align: center;
+            }
+
+            a {
+                color: #efece5;
+                font-family: "hero", Roboto, sans-serif;
+                font-size: 15px;
+                font-weight: 300;
+                text-decoration: none;
+                padding: 0.5rem;
+
+                @include mixins.phones-down {
+                    width: 50%;
+                    font-size: 14px;
+                }
+
+                &:hover {
+                    color: white;
+                }
+            }
+        }
+    }
+
+    .container {
+        height: 606px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        .copyright {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-right: 4rem;
+            padding-left: 4rem;
+            padding-right: 4rem;
+            flex-wrap: wrap;
+
+            @include mixins.phones-down {
+                margin: 0;
+                padding: 0 1rem 0 1rem;
+                justify-content: center;
+            }
+
+            .text-container {
+                width: 500px;
+
+                @include mixins.phones-down {
+                    width: 100%;
+                }
+
+                h2 {
+                    font-weight: 300;
+                }
+
+                p {
+                    width: 445px;
+                    font-family: "hero", Roboto, sans-serif;
+                    font-weight: 300;
+                    font-size: 1rem;
+
+                    @include mixins.phones-down {
+                        width: 100%;
+                    }
+                }
+
+                .connect-container {
+                    margin-top: 3rem;
+
+                    p {
+                        width: 285px;
+                        font-weight: 400;
+                    }
+                }
+            }
+
+            svg {
+                height: 1rem;
+
+                @include mixins.tablets {
+                    height: 1.5rem;
+                }
+            }
+        }
+
+        .social-menu {
+            display: flex;
+            flex-direction: column;
+
+            @include mixins.phones-down {
+                flex-direction: row;
+                margin-top: 10rem;
+            }
+
+            .social_link {
+                padding: 0.5rem;
+
+                a {
+                    font-family: "hero", Roboto, sans-serif;
+                    font-size: small;
+                    font-weight: 400;
+                    color: variables.$brand-primary;
+                    text-decoration: none;
+                    position: relative;
+                    padding-bottom: 0.1rem;
+
+                    &:hover {
+                        color: white;
+                    }
+                }
+
+                svg {
+                    height: 1rem;
+                    margin: auto;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    top: 0;
+                }
+            }
+        }
+    }
+}

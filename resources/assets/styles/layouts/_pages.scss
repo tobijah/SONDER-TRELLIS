@@ -1,0 +1,513 @@
+.main {
+    // Shop page
+    .metaslider {
+        @include phones-down {
+            display: none;
+        }
+    }
+
+    .product-wrapper {
+        @include phones-down {
+            overflow: hidden;
+        }
+    }
+
+    .shop-section {
+        height: 100%;
+        width: auto;
+        position: relative;
+        padding-top: 0.5rem;
+        padding-bottom: 2rem;
+
+        .page-header {
+            width: 80%;
+            margin: auto;
+            padding: 7rem 0;
+
+            @include phones-down {
+                padding: 2rem 0;
+            }
+
+            h1 {
+                text-transform: uppercase;
+                color: $brand-primary;
+                font-family: "hero", Roboto, sans-serif;
+                font-weight: 400;
+                border-bottom: 1px solid $brand-primary;
+                width: fit-content;
+                padding-bottom: 1rem;
+
+                @include phones-down {
+                    font-weight: 300;
+                    font-size: larger;
+                }
+            }
+        }
+
+        .section-overlay {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+
+            @include phones-down {
+                height: 105%;
+            }
+
+            .background {
+                background: url("@images/Herobackground.jpg") no-repeat center center;
+                background-size: cover;
+                filter: brightness(30%);
+                min-height: 100%;
+                width: 100%;
+                position: relative;
+                z-index: -1;
+            }
+        }
+    }
+
+    h2 {
+        color: $dark-font;
+        text-decoration: none;
+    }
+
+    a {
+        text-decoration: none;
+        color: $dark-font;
+    }
+
+    .woocommerce {
+        &.columns-3 {
+            width: 85%;
+            margin: auto;
+            padding-bottom: 4rem;
+
+            @media only screen and (min-width: 1860px) {
+                width: 65%;
+            }
+
+            @media only screen and (min-width: 1150px) and (max-width: 1650px) {
+                width: 70%;
+            }
+
+            @include custom-tablet {
+                width: 95%;
+            }
+
+            @include phones-down {
+                width: 100%;
+            }
+
+            ul {
+                &.products {
+                    margin: 0 0 1em;
+                    padding: 0;
+                    list-style: none outside;
+                    clear: both;
+                    display: flex;
+                    justify-content: center;
+                    flex-wrap: wrap;
+                    gap: 8rem;
+
+                    @include custom-tablet {
+                        gap: 6rem;
+                    }
+
+                    @include phones-down {
+                        gap: 1rem;
+                    }
+                }
+
+                li {
+                    list-style: none;
+
+                    &.product {
+                        display: flex;
+                        flex-direction: column;
+                        float: left;
+                        width: 300px;
+                        position: relative;
+                        background-color: white;
+                        border-radius: 10px;
+                        height: 410px;
+
+                        @include phones-down {
+                            height: 262px;
+                            width: 177px;
+                        }
+
+                        &:hover {
+                            a.add_to_cart_button {
+                                display: block;
+                            }
+
+                            a .price {
+                                display: none;
+                            }
+                        }
+                    }
+
+                    img {
+                        border-radius: 10px 10px 0 0;
+
+                        @include phones-down {
+                            height: auto;
+                            flex-shrink: 1;
+                        }
+                    }
+
+                    a {
+                        text-align: center;
+
+                        @include phones-down {
+                            font-size: 0.8rem;
+                        }
+
+                        &.add_to_cart_button {
+                            display: none;
+                        }
+
+                        .price {
+                            display: block;
+                        }
+                    }
+
+                    h2 {
+                        text-align: center;
+                        font-size: 1.2rem;
+                        padding: 0 20px;
+
+                        @include phones-down {
+                            font-size: 0.8rem;
+                            padding: 0 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    //Subscription-page
+
+    .subscriptions {
+        display: flex;
+        align-items: center;
+
+        @include phones-down {
+            align-items: flex-start;
+        }
+
+        .background-overlay {
+            height: 1032px;
+            width: 100%;
+
+            @include phones-down {
+                height: 595px;
+            }
+
+            .background {
+                background: url("@images/Sub_image.png") no-repeat center center;
+                background-size: cover;
+                height: inherit;
+                width: 100%;
+
+                @include phones-down {
+                    background: url("@images/Subscription_BG.png") no-repeat center center;
+                    padding-left: 510px;
+                }
+            }
+        }
+
+        .content {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            max-width: 500px;
+            padding-left: 10rem;
+
+            @include phones-down {
+                padding-top: 2rem;
+                padding-left: 2rem;
+            }
+
+            h2 {
+                text-transform: uppercase;
+            }
+
+            .text {
+                width: 69%;
+                padding: 1rem 0 3rem 0;
+
+                @include phones-down {
+                    display: none;
+                }
+
+                .offers {
+                    font-size: 1.1rem;
+                }
+
+                p {
+                    margin: 3rem 0;
+                    font-family: "hero", Roboto, sans-serif;
+                    font-size: 1rem;
+                    font-weight: 100;
+                }
+            }
+
+            .options {
+                cursor: pointer;
+                border: 1px solid $dark-font;
+                border-radius: 2.5px;
+                text-align: center;
+                padding: 5px 1px;
+                width: 30%;
+                font-family: Robot, sans-serif;
+                font-size: 1rem;
+                font-weight: 100;
+                text-transform: uppercase;
+
+                @include phones-down {
+                    font-size: 0.8rem;
+                    width: 42%;
+                }
+            }
+        }
+    }
+
+    //Brew-guide-page
+
+    .brew-guide {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 1024px;
+        width: 100%;
+        margin: auto;
+
+        img {
+            border-radius: 3px;
+        }
+
+        .brew {
+            margin-top: 5rem;
+            padding: 0 0.5rem;
+
+            h1 {
+                text-transform: uppercase;
+                font-weight: 100;
+
+                @include phones-down {
+                    font-size: 2rem;
+                }
+            }
+
+            p {
+                margin: 0;
+            }
+        }
+
+        .guide-table {
+            display: flex;
+            padding: 7rem 0 10rem;
+            min-width: 1024px;
+            width: 100%;
+
+            @media (max-width: 1025px) {
+                min-width: 0;
+            }
+
+            .table-content {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+                width: 100%;
+                gap: 2rem 0;
+
+                .card {
+                    flex-shrink: 1;
+
+                    @media (max-width: 1200px) {
+                        width: 44%;
+                    }
+
+                    h1 {
+                        font-family: "hero", Roboto, sans-serif;
+                        font-weight: 100;
+                        margin: 0 0 1.5rem;
+
+                        @include phones-down {
+                            font-size: 1.3rem;
+                        }
+                    }
+
+                    p {
+                        margin: 0;
+                    }
+                }
+            }
+
+            img {
+                max-height: 300px;
+                height: 100%;
+                width: auto;
+            }
+        }
+    }
+
+    //Contact-page
+
+    .contact-us {
+        .background {
+            width: 100%;
+            height: 1000px;
+            background-color: #414040;
+            position: absolute;
+            z-index: -1;
+
+            @include phones-down {
+                height: 650px;
+            }
+        }
+
+        .content-box {
+            padding: 5rem 9rem;
+
+            @include phones-down {
+                padding: 3rem 2rem;
+            }
+
+            .content-info {
+                color: $brand-primary;
+
+                h1 {
+                    font-family: "hero", sans-serif;
+                    font-weight: lighter;
+                    font-size: 2.5rem;
+                    margin-bottom: 4rem;
+                    text-transform: uppercase;
+
+                    @include phones-down {
+                        font-size: 2rem;
+                    }
+                }
+
+                p {
+                    font-family: "hero", Roboto, sans-serif;
+                    font-weight: 100;
+                    font-size: 1rem;
+
+                    @include phones-down {
+                        font-size: 0.8rem;
+                        padding: 0.2rem 0;
+                    }
+                }
+
+                svg {
+                    width: 15px;
+                    height: 15px;
+                    fill: $brand-primary;
+                    padding-right: 1rem;
+                }
+            }
+        }
+
+        .FAQ {
+            display: flex;
+            flex-direction: column;
+            background: url("@images/FAQ-background.png") center center no-repeat;
+            width: 90%;
+            height: 650px;
+            margin: auto;
+            margin-bottom: 10rem;
+            box-shadow: 0 0 10px 10px rgb(26, 26, 26);
+
+            @include phones-down {
+                height: 435px;
+                margin-bottom: 0;
+                background-position: 10% 10%;
+            }
+
+            h2 {
+                font-size: 3rem;
+                color: $brand-primary;
+                font-weight: lighter;
+                width: 90%;
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: 0;
+
+                @include phones-down {
+                    width: 325px;
+                }
+            }
+
+            .box {
+                width: 70%;
+                margin: auto;
+            }
+        }
+
+        .join-team-section {
+            padding: 5rem 9rem;
+            margin-bottom: 3rem;
+
+            @include phones-down {
+                padding: 5rem 2rem;
+            }
+
+            .apply {
+                width: 75%;
+
+                h1 {
+                    text-transform: uppercase;
+                    font-weight: lighter;
+                    font-size: 2.5rem;
+                    margin-bottom: 3rem;
+                }
+
+                .h-text {
+                    font-size: 1.5rem;
+                    margin-bottom: 3rem;
+                }
+
+                p {
+                    font-family: "hero", Roboto, sans-serif;
+                    font-weight: 100;
+                    font-size: 1rem;
+                }
+
+                a {
+                    color: $brand-primary;
+                }
+
+                #apply-button {
+                    margin-top: 4rem;
+                }
+            }
+        }
+    }
+}
+
+// footer {
+//     color: $dark-font;
+
+//     &a {
+//         color: $dark-font;
+//     }
+
+//     .wrapper-footer {
+//         .footer-background {
+//             display: none;
+//         }
+
+//         .container .copyright .social-menu .social_link a,
+//         .container .copyright .social-menu .social_link svg,
+//         .container .copyright-text .links a {
+//             color: $dark-font;
+//         }
+//     }
+// }
+
+footer {
+    padding-top: 0;
+}

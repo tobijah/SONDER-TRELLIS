@@ -1,0 +1,8 @@
+@import "common/variables";
+@import "common/mixins";
+
+/** Import everything from autoload */
+@import "./autoload/**/*";
+
+/** Import theme styles */
+@import "layouts/home";
